@@ -373,3 +373,118 @@ Finished building: TIMER.bin
  
 Finished building: TIMER.list
  
+15:26:14 **** Incremental Build of configuration Debug for project TIMER ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:7: warning: unused variable 'status' [-Wunused-variable]
+  160 |   int status = 0;
+      |       ^~~~~~
+../Core/Src/main.c:127:14: warning: unused variable 'MAX_LED' [-Wunused-variable]
+  127 |    const int MAX_LED = 4;
+      |              ^~~~~~~
+arm-none-eabi-gcc -o "TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Hong Phat\Desktop\LAB2 MCU\TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TIMER.elf
+ 
+arm-none-eabi-size   TIMER.elf 
+arm-none-eabi-objdump -h -S  TIMER.elf  > "TIMER.list"
+arm-none-eabi-objcopy  -O ihex  TIMER.elf  "TIMER.hex"
+arm-none-eabi-objcopy  -O binary  TIMER.elf  "TIMER.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7716	     20	   1660	   9396	   24b4	TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TIMER.bin
+Finished building: TIMER.hex
+ 
+Finished building: TIMER.list
+ 
+ 
+15:26:41 **** Incremental Build of configuration Debug for project TIMER ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:7: warning: unused variable 'status' [-Wunused-variable]
+  165 |   int status = 0;
+      |       ^~~~~~
+../Core/Src/main.c:132:14: warning: unused variable 'MAX_LED' [-Wunused-variable]
+  132 |    const int MAX_LED = 4;
+      |              ^~~~~~~
+arm-none-eabi-gcc -o "TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Hong Phat\Desktop\LAB2 MCU\TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TIMER.elf
+ 
+arm-none-eabi-size   TIMER.elf 
+arm-none-eabi-objdump -h -S  TIMER.elf  > "TIMER.list"
+arm-none-eabi-objcopy  -O ihex  TIMER.elf  "TIMER.hex"
+arm-none-eabi-objcopy  -O binary  TIMER.elf  "TIMER.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7752	     20	   1660	   9432	   24d8	TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TIMER.hex
+Finished building: TIMER.bin
+ 
+ 
+Finished building: TIMER.list
+ 
+15:29:36 **** Incremental Build of configuration Debug for project TIMER ****
+make -j8 all 
+arm-none-eabi-size   TIMER.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7752	     20	   1660	   9432	   24d8	TIMER.elf
+Finished building: default.size.stdout
+ 
+15:30:34 **** Incremental Build of configuration Debug for project TIMER ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:165:7: warning: unused variable 'status' [-Wunused-variable]
+  165 |   int status = 0;
+      |       ^~~~~~
+../Core/Src/main.c:132:14: warning: unused variable 'MAX_LED' [-Wunused-variable]
+  132 |    const int MAX_LED = 4;
+      |              ^~~~~~~
+arm-none-eabi-gcc -o "TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Hong Phat\Desktop\LAB2 MCU\TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TIMER.elf
+ 
+arm-none-eabi-size   TIMER.elf 
+arm-none-eabi-objdump -h -S  TIMER.elf  > "TIMER.list"
+arm-none-eabi-objcopy  -O ihex  TIMER.elf  "TIMER.hex"
+arm-none-eabi-objcopy  -O binary  TIMER.elf  "TIMER.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7760	     20	   1660	   9440	   24e0	TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TIMER.hex
+Finished building: TIMER.bin
+ 
+ 
+Finished building: TIMER.list
+ 
+15:36:31 **** Incremental Build of configuration Debug for project TIMER ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:181:7: warning: unused variable 'status' [-Wunused-variable]
+  181 |   int status = 0;
+      |       ^~~~~~
+../Core/Src/main.c:148:14: warning: unused variable 'MAX_LED' [-Wunused-variable]
+  148 |    const int MAX_LED = 4;
+      |              ^~~~~~~
+arm-none-eabi-gcc -o "TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Hong Phat\Desktop\LAB2 MCU\TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TIMER.elf
+ 
+arm-none-eabi-size   TIMER.elf 
+arm-none-eabi-objdump -h -S  TIMER.elf  > "TIMER.list"
+arm-none-eabi-objcopy  -O ihex  TIMER.elf  "TIMER.hex"
+arm-none-eabi-objcopy  -O binary  TIMER.elf  "TIMER.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7864	     20	   1660	   9544	   2548	TIMER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TIMER.hex
+Finished building: TIMER.bin
+ 
+ 
+Finished building: TIMER.list
+ 
