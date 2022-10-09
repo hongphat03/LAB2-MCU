@@ -1,10 +1,11 @@
-15:36:31 **** Incremental Build of configuration Debug for project TIMER ****
+17:15:46 **** Incremental Build of configuration Debug for project TIMER ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'updateClockBuffer':
+../Core/Src/main.c:179:9: warning: unused variable 'min' [-Wunused-variable]
+  179 |     int min = minute;
+      |         ^~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:181:7: warning: unused variable 'status' [-Wunused-variable]
-  181 |   int status = 0;
-      |       ^~~~~~
 ../Core/Src/main.c:148:14: warning: unused variable 'MAX_LED' [-Wunused-variable]
   148 |    const int MAX_LED = 4;
       |              ^~~~~~~
@@ -16,15 +17,15 @@ arm-none-eabi-objdump -h -S  TIMER.elf  > "TIMER.list"
 arm-none-eabi-objcopy  -O ihex  TIMER.elf  "TIMER.hex"
 arm-none-eabi-objcopy  -O binary  TIMER.elf  "TIMER.bin"
    text	   data	    bss	    dec	    hex	filename
-   7864	     20	   1660	   9544	   2548	TIMER.elf
+   7928	     20	   1660	   9608	   2588	TIMER.elf
 Finished building: default.size.stdout
  
 Finished building: TIMER.hex
 Finished building: TIMER.bin
  
- 
 Finished building: TIMER.list
  
+ 
 
-15:36:32 Build Finished. 0 errors, 2 warnings. (took 956ms)
+17:15:47 Build Finished. 0 errors, 2 warnings. (took 922ms)
 
