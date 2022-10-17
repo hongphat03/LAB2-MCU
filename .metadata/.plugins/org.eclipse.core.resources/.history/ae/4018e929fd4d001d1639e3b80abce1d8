@@ -97,10 +97,6 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,1);
-  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,1);
-  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
-  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,1);
      while (1)
      {
     /* USER CODE END WHILE */
@@ -302,6 +298,10 @@ void reset(){
    int status = 0;
    int counter_7seg = 50;
    int counter_dot = 100;
+   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,1);
+   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,1);
+   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
+   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,1);
    void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
    	if(counter_dot > 0){
 
