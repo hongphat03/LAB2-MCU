@@ -775,7 +775,7 @@ void reset(){
  8000584:	20000000 	.word	0x20000000
 
 08000588 <HAL_TIM_PeriodElapsedCallback>:
-      int counter = 50;
+      int counter = 25;
       int counter_led = 100;
       void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8000588:	b580      	push	{r7, lr}
@@ -825,9 +825,9 @@ void reset(){
  80005cc:	681b      	ldr	r3, [r3, #0]
  80005ce:	2b00      	cmp	r3, #0
  80005d0:	dc11      	bgt.n	80005f6 <HAL_TIM_PeriodElapsedCallback+0x6e>
-      			counter = 50;
+      			counter = 25;
  80005d2:	4b0d      	ldr	r3, [pc, #52]	; (8000608 <HAL_TIM_PeriodElapsedCallback+0x80>)
- 80005d4:	2232      	movs	r2, #50	; 0x32
+ 80005d4:	2219      	movs	r2, #25
  80005d6:	601a      	str	r2, [r3, #0]
       			update7SEG(index_led++);
  80005d8:	4b0c      	ldr	r3, [pc, #48]	; (800060c <HAL_TIM_PeriodElapsedCallback+0x84>)
