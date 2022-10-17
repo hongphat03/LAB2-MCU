@@ -155,8 +155,8 @@ int main(void)
    	 			   HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_SET);
    	 		   }
      }
-  const int MAX_LED = 4;
-  int index_led = 0;
+     	  const int MAX_LED = 4;
+        int index_led = 0;
 
   void update7SEG ( int index ) {
      	   switch ( index ) {
@@ -187,8 +187,6 @@ int main(void)
 	   led_buffer[2] = minute/10;
 	   led_buffer[1] = hour%10;
 	   led_buffer[0] = hour/10;
-	   update7SEG(index_led++);
-	   if(index_led == MAX_LED) index_led = 0;
   }
   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_6,1);
   HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,1);
