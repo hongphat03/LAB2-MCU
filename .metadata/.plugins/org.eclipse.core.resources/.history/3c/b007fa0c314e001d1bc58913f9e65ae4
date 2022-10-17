@@ -192,7 +192,7 @@ int main(void)
   const int MAX_LED_MATRIX=8;
   int index_led_matrix=0;
   int count = 0 ;
-  uint8_t matrix_buffer[16]={0x00, 0xFC, 0xFE, 0x33, 0x33, 0xFE, 0xFC, 0x00};
+  uint8_t matrix_buffer[16]={0x00, 0xFC, 0xFE, 0x33, 0x33, 0xFE, 0xFC, 0x00,0x00, 0xFC, 0xFE, 0x33, 0x33, 0xFE, 0xFC, 0x00};
  void resetLedMatrix(){
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, 1);
 	  HAL_GPIO_WritePin(GPIOB, 0xff << 8, 1);
@@ -200,41 +200,38 @@ int main(void)
   void updateLEDMatrix(int index)
   {
   	resetLedMatrix();
-  	HAL_GPIO_WritePin(GPIOB, matrix_buffer[(index+count)%8] <<8, 0);
   	switch(index){
   			case 0:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[0+count] <<8, 0);
   				break;
   			case 1:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[1+count] <<8, 0);
   				break;
   			case 2:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[2+count] <<8, 0);
   				break;
   			case 3:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[3+count] <<8, 0);
   				break;
   			case 4:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[4+count] <<8, 0);
   				break;
   			case 5:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[5+count] <<8, 0);
   				break;
   			case 6:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_14, 0);
-
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[6+count] <<8, 0);
   				break;
   			case 7:
   				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, 0);
-
-  				count++;
-  		  		if(count == MAX_LED_MATRIX) count = 0;
+  				HAL_GPIO_WritePin(GPIOB, matrix_buffer[7+count] <<8, 0);
   			default:
   				break;
   			}
@@ -274,7 +271,8 @@ int main(void)
   	  if(timer3_flag ==1){
   		if(index_led_matrix == MAX_LED_MATRIX) index_led_matrix = 0;
   		updateLEDMatrix(index_led_matrix++);
-
+  		count++;
+  		if(count == MAX_LED_MATRIX) count = 0;
   		setTimer3(50);
   	  }
       /* USER CODE END WHILE */
